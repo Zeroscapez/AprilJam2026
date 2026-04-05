@@ -9,7 +9,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
     public int CurrentEnemyHealth;
     private string enemyName;
     private int maxEnemyHealth;
-    private int pointValue;
+  [SerializeField]  private int pointValue;
 
     [Header("VFX / Feedback")]
     public Color FlashColor = Color.red;

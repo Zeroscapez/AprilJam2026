@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        
     }
 
     /// <summary>

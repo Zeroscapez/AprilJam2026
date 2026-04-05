@@ -67,6 +67,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
 
     public void Die()
     {
+        ScoreManager.Instance.AddScore(pointValue);
         if (GameManager.Instance.GAME == GameState.Debug)
         {
             Debug.Log(enemyName + " has been defeated!");

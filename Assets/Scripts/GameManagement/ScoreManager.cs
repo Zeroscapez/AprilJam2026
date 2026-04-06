@@ -6,7 +6,11 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get; private set; }
 
     [Header("Score")]
-    [SerializeField] private int currentScore = 0;
+    private int currentScore;
+    public int CurrentScore
+    {
+        get { return currentScore; }
+    }
 
     // Fire this event to notify UI or other systems when score changes
     public UnityEvent<int> OnScoreChanged;
@@ -19,7 +23,7 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         Instance = this;
-        
+
     }
 
     /// <summary>
@@ -32,7 +36,6 @@ public class ScoreManager : MonoBehaviour
         OnScoreChanged?.Invoke(currentScore);
     }
 
-    public int GetScore() => currentScore;
 
     public void ResetScore()
     {

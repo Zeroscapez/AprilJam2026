@@ -1,0 +1,71 @@
+using System;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class UIStageTimer : MonoBehaviour
+{
+    public static UIStageTimer Instance { get; private set; }
+    public TextMeshProUGUI TimerText;
+
+    public event Action<float> OnTimerStop;
+
+    public float ElapsedTime { get; private set; }
+    public bool IsRunning { get; private set; }
+
+
+
+
+
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        IsRunning = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (!IsRunning)
+        {
+            return;
+        }
+
+        ElapsedTime += Time.deltaTime;
+
+        if (TimerText != null)
+        {
+            TimerText.text = $"Time: {FormatTime(ElapsedTime)}";
+        }
+
+
+
+    }
+
+    public void StopTimer()
+    {
+        if (!IsRunning)
+        {
+            return;
+        }
+
+        IsRunning = false;
+        SaveManager.SaveStageTime(ElapsedTime);
+        OnTimerStop?.Invoke(ElapsedTime);
+    }
+
+
+    // Formats as MM:SS e.g. "01:23"
+    public static string FormatTime(float seconds)
+    {
+        int m = Mathf.FloorToInt(seconds / 60);
+        int s = Mathf.FloorToInt(seconds % 60);
+        return $"{s:000}";
+    }
+}

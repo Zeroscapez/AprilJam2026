@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,20 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void Stop()
+    {
+        if (GAME != GameState.Playing)
+        {
+            return;
+        }
+
+        GAME = GameState.GameOver;
+
+        UIStageTimer.Instance.StopTimer();
+        ScoreManager.Instance.SubmitScore();
 
     }
 }

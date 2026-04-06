@@ -9,7 +9,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
     public int CurrentEnemyHealth;
     private string enemyName;
     private int maxEnemyHealth;
-  [SerializeField]  private int pointValue;
+    [SerializeField] private int pointValue;
 
     [Header("VFX / Feedback")]
     public Color FlashColor = Color.red;
@@ -30,8 +30,8 @@ public class EnemyTarget : MonoBehaviour, IShootable
 
         if (enemyData == null)
         {
-            Debug.LogError("EnemyData not assigned on " + gameObject.name);
-            Debug.LogError("Assigning default values to prevent errors.");
+            Debug.LogWarning("EnemyData not assigned on " + gameObject.name);
+            Debug.LogWarning("Assigning default values to prevent errors.");
 
             enemyName = "Default Enemy";
             maxEnemyHealth = 5;

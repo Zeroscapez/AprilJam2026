@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,14 +7,12 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance { get; private set; }
 
     [Header("Score")]
-    private int currentScore;
-    public int CurrentScore
-    {
-        get { return currentScore; }
-    }
+    public int CurrentScore { get; private set; }
 
     // Fire this event to notify UI or other systems when score changes
-    public UnityEvent<int> OnScoreChanged;
+
+    public event Action<int> OnScoreChanged;
+    public event Action<int> OnHighScoreBeaten;
 
     private void Awake()
     {
@@ -26,20 +25,31 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    /// <summary>
-    /// Call this from an enemy's Die() method, passing in its point value.
-    /// </summary>
+
+    // Call this from an enemy's Die() method, passing in its point value.
+
     public void AddScore(int points)
     {
-        currentScore += points;
-        Debug.Log($"[ScoreManager] +{points} pts → Total: {currentScore}");
-        OnScoreChanged?.Invoke(currentScore);
+        CurrentScore += points;
+        Debug.Log($"[ScoreManager] +{points} pts → Total: {CurrentScore}");
+        OnScoreChanged?.Invoke(CurrentScore);
+    }
+
+    public void SubmitScore()
+    {
+        SaveManager.SaveLastScore(CurrentScore);
+
+        if (CurrentScore > SaveManager.GetHighScore())
+        {
+            SaveManager.SaveHighScore(CurrentScore);
+            OnHighScoreBeaten?.Invoke(CurrentScore);
+        }
     }
 
 
     public void ResetScore()
     {
-        currentScore = 0;
-        OnScoreChanged?.Invoke(currentScore);
+        CurrentScore = 0;
+        OnScoreChanged?.Invoke(CurrentScore);
     }
 }

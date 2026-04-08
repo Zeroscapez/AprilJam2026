@@ -72,7 +72,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.SetParent(EnemyContainer);
         EnemyManager.Instance?.RegisterEnemy();
 
-        Debug.Log($"[EnemySpawner] Spawned {spawnEvent.EnemyPrefab.name} at t={_elapsed:F1}s");
+        //  Debug.Log($"[EnemySpawner] Spawned {spawnEvent.EnemyPrefab.name} at t={_elapsed:F1}s");
     }
 
     // Draws spawn positions in the Scene view so you don't need empty GameObjects

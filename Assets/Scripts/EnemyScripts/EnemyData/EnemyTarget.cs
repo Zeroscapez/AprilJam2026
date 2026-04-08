@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class EnemyTarget : MonoBehaviour, IShootable
 {
+
 
     public EnemyData enemyData;
     public int CurrentEnemyHealth;
@@ -17,16 +20,23 @@ public class EnemyTarget : MonoBehaviour, IShootable
     private Material _material;
     private Color _originalColor;
 
+    public float DeathDelay = 0.5f; // Time to wait before destroying the enemy after death
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Sprites")]
+    public Sprite AliveSprite;
+    public Sprite AttackSprite;
+    public Sprite DeathSprite;
+
+    public SpriteRenderer _renderer { get; private set; }
+    private EnemyMovement EnemyMovement;
+
+
+    void Awake()
     {
-        _material = GetComponent<Renderer>().material;
-        if (_material)
-        {
-            _originalColor = _material.color;
-        }
 
+        _material = GetComponent<Renderer>().material;
+        EnemyMovement = GetComponent<EnemyMovement>();
+        _renderer = GetComponent<SpriteRenderer>();
 
         if (enemyData == null)
         {
@@ -38,9 +48,32 @@ public class EnemyTarget : MonoBehaviour, IShootable
             CurrentEnemyHealth = maxEnemyHealth;
             return;
         }
-        enemyName = enemyData.EnemyName;
-        maxEnemyHealth = enemyData.MaxHealth;
-        CurrentEnemyHealth = maxEnemyHealth;
+        else
+        {
+            enemyName = enemyData.EnemyName;
+            maxEnemyHealth = enemyData.MaxHealth;
+            CurrentEnemyHealth = maxEnemyHealth;
+            AliveSprite = enemyData.AliveSprite;
+            AttackSprite = enemyData.AttackSprite;
+            DeathSprite = enemyData.DeathSprite;
+        }
+
+    }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+
+        if (_material)
+        {
+            _originalColor = _material.color;
+        }
+
+
+
+
+
+
+        SetAlive();
     }
 
     // Update is called once per frame
@@ -68,13 +101,19 @@ public class EnemyTarget : MonoBehaviour, IShootable
 
     public void Die()
     {
+        EnemyMovement._isActing = true; // Prevents any further actions
+        EnemyMovement.enabled = false; // Stop movement immediately
         ScoreManager.Instance.AddScore(pointValue);
         if (GameManager.Instance.GAME == GameState.Debug)
         {
             Debug.Log(enemyName + " has been defeated!");
             return;
         }
-        this.gameObject.SetActive(false);
+
+        SetDeath();
+
+        StartCoroutine(DestroyAfterDelay()); // Delay to allow death animation/sprite to show
+
     }
 
     IEnumerator Flash()
@@ -83,4 +122,14 @@ public class EnemyTarget : MonoBehaviour, IShootable
         yield return new WaitForSeconds(FlashDuration);
         _material.color = _originalColor;
     }
+
+    IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(DeathDelay);
+        this.gameObject.SetActive(false);
+    }
+
+    public void SetAlive() => _renderer.sprite = AliveSprite;
+    public void SetAttack() => _renderer.sprite = AttackSprite;
+    public void SetDeath() => _renderer.sprite = DeathSprite;
 }

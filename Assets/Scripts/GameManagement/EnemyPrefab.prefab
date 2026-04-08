@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 102381953, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}
+  m_Sprite: {fileID: -791400038, guid: 69e5d4a20583b7a46a77700791a0c1b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,6 +152,9 @@ MonoBehaviour:
   PauseEnabled: 0
   PauseDuration: 1
   PauseInterval: 3
+  LifeTime: 10
+  AttackAfter: 2
+  AttackDamage: 1
 --- !u!114 &4464774777944418107
 MonoBehaviour:
   m_ObjectHideFlags: 0

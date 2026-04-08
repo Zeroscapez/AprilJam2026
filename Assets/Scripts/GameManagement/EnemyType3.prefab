@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: StopDistance
-      value: 2.4
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: PauseDuration

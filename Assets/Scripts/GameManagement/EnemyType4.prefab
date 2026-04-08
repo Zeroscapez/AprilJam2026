@@ -87,13 +87,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyZigzagMover
   Speed: 3
-  StopDistance: 2
+  StopDistance: 3.3
   PauseEnabled: 1
   PauseDuration: 0.5
-  PauseInterval: 1.5
+  PauseInterval: 1.4
   LifeTime: 10
   AttackAfter: 5
   AttackDamage: 1
   _target: {fileID: 0}
+  playerTransform: {fileID: 0}
   Frequency: 2
   Amplitude: 4

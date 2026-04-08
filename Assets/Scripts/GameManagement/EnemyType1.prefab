@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 919bbe3727ea5c943bab9b2915e86a16, type: 2}
+    - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6026525474953890008, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Name
       value: EnemyType1
@@ -84,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc8e639f46ca00408ecca7333f3815c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySideMover
-  Speed: 3
+  Speed: 2
   StopDistance: 1
   PauseEnabled: 0
   PauseDuration: 3

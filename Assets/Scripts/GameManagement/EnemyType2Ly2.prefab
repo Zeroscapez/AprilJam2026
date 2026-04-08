@@ -64,9 +64,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Name
-      value: EnemyType2L2
+      value: EnemyType2Ly2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
@@ -106,5 +110,5 @@ MonoBehaviour:
   _isActing: 0
   _target: {fileID: 0}
   playerTransform: {fileID: 0}
-  PeekHeight: 5
+  PeekHeight: 6
   PeekDuration: 0.5

@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1067232544, guid: dd2a7edccd46c1b499a5b01402a42a19, type: 3}
+    - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: AttackAfter
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: AttackDamage
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: PauseEnabled
       value: 0
@@ -31,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: PauseInterval
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: AttackDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4464774777944418107, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_SpriteHash
@@ -75,6 +91,10 @@ PrefabInstance:
     - target: {fileID: 6026525474953890008, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Name

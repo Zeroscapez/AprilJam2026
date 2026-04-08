@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 102381953, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}
+    - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: StopDistance
       value: 2.5
@@ -64,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Name
       value: EnemyType4
@@ -95,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyZigzagMover
   Speed: 3
-  StopDistance: 3.3
+  StopDistance: 14
   PauseEnabled: 1
   PauseDuration: 0.5
   PauseInterval: 1.4

@@ -420,7 +420,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.23246625, y: -0.66692996, z: 12.2}
-  m_LocalScale: {x: 136.23694, y: 86.99028, z: 100}
+  m_LocalScale: {x: 143.18503, y: 86.99028, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 746491127}
@@ -1285,8 +1285,8 @@ Transform:
   m_GameObject: {fileID: 746491126}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2942, y: 2.0122, z: 74.7}
-  m_LocalScale: {x: 1.19349, y: 1.1125, z: 1}
+  m_LocalPosition: {x: 1.0955, y: 1.9553, z: 74.7}
+  m_LocalScale: {x: 0.93895435, y: 1.0271379, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2120107228}
@@ -1935,6 +1935,14 @@ PrefabInstance:
     - target: {fileID: 3274863616008207698, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
       propertyPath: m_Name
       value: ImportantStageObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: FireRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: SpherecastRadius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9138187170105941159, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
       propertyPath: Timeline

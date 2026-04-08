@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth Instance { get; private set; }
     [Header("Health")]
     public int MaxHealth = 3;
 
@@ -12,6 +13,11 @@ public class PlayerHealth : MonoBehaviour
     public event Action<int> OnHealthChanged;
     public event Action OnPlayerDied;
 
+
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         CurrentHealth = MaxHealth;

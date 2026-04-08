@@ -8,5 +8,10 @@ public class EnemyData : ScriptableObject
     public float LifeTime;
     public float AttackAfter;
     public int AttackDamage;
+
+    [Header("Sprites")]
+    public Sprite AliveSprite;
+    public Sprite AttackSprite;
+    public Sprite DeathSprite;
 }
 

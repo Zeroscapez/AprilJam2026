@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -19,11 +20,14 @@ public abstract class EnemyMovement : MonoBehaviour
 
     [Header("Attack")]
     public int AttackDamage = 1;            // Damage dealt to the player on attack
+    public float AttackDuration = 0.5f;        // Duration of the attack animation/state
 
     private float _elapsed;
     private bool _hasAttacked;
     private float _pauseTimer;
     private bool _isPaused;
+
+    public bool _isActing;
 
     public EnemyTarget _target;
     public Transform playerTransform;
@@ -74,6 +78,10 @@ public abstract class EnemyMovement : MonoBehaviour
 
     void HandlePause()
     {
+
+        if (_isActing) return;
+
+
         if (PauseEnabled)
         {
             _pauseTimer += Time.deltaTime;
@@ -98,16 +106,26 @@ public abstract class EnemyMovement : MonoBehaviour
         if (Vector3.Distance(transform.position, playerTransform.position) > StopDistance)
         {
             Move();
-            Debug.Log($"[{name}] is moving towards the player. Distance: {Vector3.Distance(transform.position, playerTransform.position):F2}");
+
         }
 
     }
 
     void AttackPlayer()
     {
-        PlayerHealth player = FindFirstObjectByType<PlayerHealth>();
-        player?.TakeDamage(AttackDamage);
-        Debug.Log($"[{name}] attacked the player for {AttackDamage} damage.");
+
+        PlayerHealth.Instance?.TakeDamage(AttackDamage);
+        StartCoroutine(AttackSequence());
+
+    }
+
+    IEnumerator AttackSequence()
+    {
+        _isActing = true;
+        _target.SetAttack();
+        yield return new WaitForSeconds(AttackDuration);
+        _target.SetAlive();
+        _isActing = false;
     }
 
     void Despawn()

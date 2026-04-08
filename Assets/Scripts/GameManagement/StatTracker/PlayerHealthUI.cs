@@ -61,7 +61,7 @@ public class PlayerHealthUI : MonoBehaviour
             if (EmptyHeartSprite != null)
             {
                 heartImages[i].sprite = isFull ? FullHeartSprite : EmptyHeartSprite;
-                Debug.Log(isFull ? $"Heart {i + 1}: Full" : $"Heart {i + 1}: Empty");
+
             }
             else
                 heartImages[i].gameObject.SetActive(isFull); // Just hide if no empty sprite

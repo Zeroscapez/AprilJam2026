@@ -8,7 +8,7 @@ public abstract class EnemyMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float Speed = 2f;
-    public float StopDistance = 1f;
+    public float StopDistance = 1f; // Distance from the player at which the enemy stops moving
     public bool PauseEnabled = false;
     public float PauseDuration = 1f;
     public float PauseInterval = 3f;
@@ -25,8 +25,14 @@ public abstract class EnemyMovement : MonoBehaviour
     private float _pauseTimer;
     private bool _isPaused;
 
-    public EnemyTarget _target;
+    private EnemyTarget _target;
+    private Transform playerTransform;
 
+    void Awake()
+    {
+        playerTransform = Camera.main.transform;
+
+    }
     void Start()
     {
         _target = GetComponent<EnemyTarget>();
@@ -89,7 +95,7 @@ public abstract class EnemyMovement : MonoBehaviour
             }
         }
 
-        if (Vector3.Distance(transform.position, Vector3.zero) > StopDistance)
+        if (Vector3.Distance(transform.position, playerTransform.position) > StopDistance)
             Move();
     }
 

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 296192278936977988, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 59e1f93352ea4714380ea8a89d4f4015, type: 2}
     - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -70,7 +74,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
-      insertIndex: 4
+      insertIndex: -1
       addedObject: {fileID: 5936852710095199699}
   m_SourcePrefab: {fileID: 100100000, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
 --- !u!1 &846067821509750963 stripped
@@ -98,6 +102,8 @@ MonoBehaviour:
   LifeTime: 10
   AttackAfter: 5
   AttackDamage: 1
+  AttackDuration: 0.5
+  _isActing: 0
   _target: {fileID: 0}
   playerTransform: {fileID: 0}
   PeekHeight: 5

@@ -14,8 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StageTimeline
   SpawnEvents:
   - Time: 0
-    EnemyPrefab: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
-    SpawnPosition: {x: 2.59, y: 1, z: 15}
+    EnemyPrefab: {fileID: 6095508862272968346, guid: b27a32f0c120d8c41b5868550785b265, type: 3}
+    SpawnPosition: {x: -0.11, y: 1.09, z: 11.38}
   - Time: 5
-    EnemyPrefab: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
-    SpawnPosition: {x: -1.45, y: 1, z: 15}
+    EnemyPrefab: {fileID: 6095508862272968346, guid: 10fdc03b0dada034fb89180bd1f7f8e6, type: 3}
+    SpawnPosition: {x: 1.54, y: 1.68, z: 10.87}
+  - Time: 10
+    EnemyPrefab: {fileID: 6095508862272968346, guid: b3c00b65b81783c4190e327d1a5a9da5, type: 3}
+    SpawnPosition: {x: -11.59, y: 2.03, z: 4.53}
+  - Time: 15
+    EnemyPrefab: {fileID: 6095508862272968346, guid: 10fdc03b0dada034fb89180bd1f7f8e6, type: 3}
+    SpawnPosition: {x: -1.76, y: 1.68, z: 10.87}
+  - Time: 20
+    EnemyPrefab: {fileID: 6095508862272968346, guid: 58253951a7bda264ebf7c57046f145fc, type: 3}
+    SpawnPosition: {x: -0.76, y: -0.75, z: 4.95}
+  - Time: 25
+    EnemyPrefab: {fileID: 6095508862272968346, guid: 58253951a7bda264ebf7c57046f145fc, type: 3}
+    SpawnPosition: {x: 1.15, y: -0.75, z: 4.95}

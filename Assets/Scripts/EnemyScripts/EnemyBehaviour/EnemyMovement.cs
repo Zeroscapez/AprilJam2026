@@ -26,9 +26,15 @@ public abstract class EnemyMovement : MonoBehaviour
     private bool _isPaused;
 
     public EnemyTarget _target;
+    public Transform playerTransform;
 
+    void Awake()
+    {
+        playerTransform = Camera.main.transform;
+    }
     void Start()
     {
+
         _target = GetComponent<EnemyTarget>();
         if (_target == null)
         {
@@ -89,8 +95,12 @@ public abstract class EnemyMovement : MonoBehaviour
             }
         }
 
-        if (Vector3.Distance(transform.position, Vector3.zero) > StopDistance)
+        if (Vector3.Distance(transform.position, playerTransform.position) > StopDistance)
+        {
             Move();
+            Debug.Log($"[{name}] is moving towards the player. Distance: {Vector3.Distance(transform.position, playerTransform.position):F2}");
+        }
+
     }
 
     void AttackPlayer()

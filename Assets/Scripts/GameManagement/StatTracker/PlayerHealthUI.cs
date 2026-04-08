@@ -1,0 +1,70 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class PlayerHealthUI : MonoBehaviour
+{
+    [Header("References")]
+    public PlayerHealth PlayerHealth;
+    public GameObject HeartPrefab; // Heart Prefab with Image component
+
+    [Header("Sprites")]
+    public Sprite FullHeartSprite; //Full Heart
+    public Sprite EmptyHeartSprite; //Empty Heart
+
+    private List<Image> heartImages = new List<Image>();
+
+    void Start()
+    {
+        if (PlayerHealth == null)
+        {
+            Debug.LogWarning("[PlayerHealthUI] No PlayerHealth assigned.");
+            return;
+        }
+
+        PlayerHealth.OnHealthChanged += UpdateHearts;
+
+        SpawnHearts(PlayerHealth.MaxHealth);
+        UpdateHearts(PlayerHealth.MaxHealth);
+    }
+
+    void OnDisable()
+    {
+        if (PlayerHealth != null)
+            PlayerHealth.OnHealthChanged -= UpdateHearts;
+    }
+
+    void SpawnHearts(int count)
+    {
+        foreach (Image heart in heartImages)
+        {
+            Destroy(heart.gameObject);
+        }
+
+        heartImages.Clear();
+
+        for (int i = 0; i < count; i++)
+        {
+            GameObject obj = Instantiate(HeartPrefab, transform);
+            Image img = obj.GetComponent<Image>();
+            img.sprite = FullHeartSprite; // Add this line
+            heartImages.Add(img);
+        }
+    }
+
+    void UpdateHearts(int currentHealth)
+    {
+        for (int i = 0; i < heartImages.Count; i++)
+        {
+            bool isFull = i < currentHealth;
+
+            if (EmptyHeartSprite != null)
+            {
+                heartImages[i].sprite = isFull ? FullHeartSprite : EmptyHeartSprite;
+                Debug.Log(isFull ? $"Heart {i + 1}: Full" : $"Heart {i + 1}: Empty");
+            }
+            else
+                heartImages[i].gameObject.SetActive(isFull); // Just hide if no empty sprite
+        }
+    }
+}

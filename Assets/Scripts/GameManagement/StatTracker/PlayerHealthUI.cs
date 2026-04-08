@@ -14,6 +14,11 @@ public class PlayerHealthUI : MonoBehaviour
 
     private List<Image> heartImages = new List<Image>();
 
+    public void Awake()
+    {
+        PlayerHealth = PlayerHealth.Instance;
+    }
+
     void Start()
     {
         if (PlayerHealth == null)

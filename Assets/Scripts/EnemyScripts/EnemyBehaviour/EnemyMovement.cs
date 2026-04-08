@@ -35,11 +35,12 @@ public abstract class EnemyMovement : MonoBehaviour
     void Awake()
     {
         playerTransform = Camera.main.transform;
+        _target = GetComponent<EnemyTarget>();
     }
     void Start()
     {
 
-        _target = GetComponent<EnemyTarget>();
+
         if (_target == null)
         {
             Debug.LogError($"[{name}] No EnemyTarget component found! This enemy won't work correctly.");

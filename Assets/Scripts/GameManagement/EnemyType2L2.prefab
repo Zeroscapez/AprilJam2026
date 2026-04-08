@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 2004333788, guid: abc821a165d0f7e4d8d820a1819e82ce, type: 3}
+    - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4464774777944418107, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_SpriteHash
       value: 766907614
@@ -58,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6095508862272968346, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_Name
-      value: EnemyType2
+      value: EnemyType2L2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
@@ -86,14 +90,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ba5c8b7c7ffea45b5dcf7207fdaa63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPopUpMover
-  Speed: 2
-  StopDistance: 1
+  Speed: 5
+  StopDistance: 0.5
   PauseEnabled: 0
-  PauseDuration: 1
+  PauseDuration: 0.5
   PauseInterval: 3
   LifeTime: 10
   AttackAfter: 5
   AttackDamage: 1
   _target: {fileID: 0}
-  PeekHeight: 3
-  PeekDuration: 1.5
+  playerTransform: {fileID: 0}
+  PeekHeight: 5
+  PeekDuration: 0.5

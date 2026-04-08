@@ -34,7 +34,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
             Debug.LogWarning("Assigning default values to prevent errors.");
 
             enemyName = "Default Enemy";
-            maxEnemyHealth = 5;
+            maxEnemyHealth = 2;
             CurrentEnemyHealth = maxEnemyHealth;
             return;
         }

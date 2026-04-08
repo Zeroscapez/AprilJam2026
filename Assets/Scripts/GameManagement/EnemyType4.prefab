@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: ad7acd4a5fb358e4e8ceeb2913c86aa1, type: 2}
+    - target: {fileID: 1136533644371099461, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 102381953, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}
     - target: {fileID: 1770170800938376996, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: StopDistance
       value: 2.5

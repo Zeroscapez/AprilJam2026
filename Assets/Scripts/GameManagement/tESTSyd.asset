@@ -23,5 +23,5 @@ MonoBehaviour:
     EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
     SpawnPosition: {x: -12.4, y: -0.9, z: 30.2}
   - Time: 1
-    EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
+    EnemyPrefab: {fileID: 846067821509750963, guid: b71c65c28d2be424dbc4cd7724fdffc7, type: 3}
     SpawnPosition: {x: 1, y: 0.55, z: 30.2}

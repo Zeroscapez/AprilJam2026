@@ -15,7 +15,7 @@ MonoBehaviour:
   EnemyName: Enemy1
   MaxHealth: 2
   LifeTime: 10
-  AttackAfter: 2
+  AttackAfter: 5
   AttackDamage: 1
   AliveSprite: {fileID: -791400038, guid: 69e5d4a20583b7a46a77700791a0c1b1, type: 3}
   AttackSprite: {fileID: 1380777718, guid: 69e5d4a20583b7a46a77700791a0c1b1, type: 3}

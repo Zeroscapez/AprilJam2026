@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7402e9fb38dbd1c419db422208f48507, type: 3}
   m_Name: Enemy4
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  EnemyName: 
-  MaxHealth: 0
-  LifeTime: 0
-  AttackAfter: 0
-  AttackDamage: 0
-  AliveSprite: {fileID: 0}
-  AttackSprite: {fileID: 0}
-  DeathSprite: {fileID: 0}
+  EnemyName: Enemy4
+  MaxHealth: 2
+  LifeTime: 10
+  AttackAfter: 5
+  AttackDamage: 1
+  AliveSprite: {fileID: 102381953, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}
+  AttackSprite: {fileID: -1417957667, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}
+  DeathSprite: {fileID: -239998786, guid: a399236f7e31b1842b1bcf48ca7b65d3, type: 3}

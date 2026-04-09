@@ -35,8 +35,10 @@ public class GameManager : MonoBehaviour
     IEnumerator GameStartSequence()
     {
         // You can add any pre-game animations or effects here
-        yield return new WaitForSeconds(5f); // Example delay before starting the game
-
+        yield return new WaitForSeconds(3f); // Example delay before starting the game
+        UIManager.Instance.ShowBanner();
+        yield return new WaitForSeconds(1f);
+        UIManager.Instance.HideBanner();
         StartGame();
     }
 

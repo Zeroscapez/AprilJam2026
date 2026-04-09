@@ -55,7 +55,7 @@ MonoBehaviour:
   - Time: 17
     EnemyPrefab: {fileID: 771186057972978290, guid: 64be34edc2d5f2c4c8bb074c06e5aacf, type: 3}
     SpawnPosition: {x: 2.09, y: 7.06, z: 34.7}
-  - Time: 20
+  - Time: 17
     EnemyPrefab: {fileID: 3618143207256241222, guid: 7242a0a62f3a3d648b104728cc0ade92, type: 3}
     SpawnPosition: {x: -2.87, y: 1.84, z: 38}
   - Time: 20
@@ -64,33 +64,33 @@ MonoBehaviour:
   - Time: 20
     EnemyPrefab: {fileID: 4497332636710124165, guid: 60214eba89448104582928397d2664e9, type: 3}
     SpawnPosition: {x: -6.15, y: -0.12, z: 36}
-  - Time: 20
+  - Time: 22
     EnemyPrefab: {fileID: 4497332636710124165, guid: 60214eba89448104582928397d2664e9, type: 3}
     SpawnPosition: {x: 7.8, y: -0.12, z: 36}
-  - Time: 25
+  - Time: 22
+    EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
+    SpawnPosition: {x: 17.2, y: -4.38, z: 29}
+  - Time: 23
     EnemyPrefab: {fileID: 771186057972978290, guid: 64be34edc2d5f2c4c8bb074c06e5aacf, type: 3}
     SpawnPosition: {x: 6.4, y: -5.05, z: 31.2}
-  - Time: 25
+  - Time: 23
     EnemyPrefab: {fileID: 846067821509750963, guid: b71c65c28d2be424dbc4cd7724fdffc7, type: 3}
     SpawnPosition: {x: 0.97, y: 0.55, z: 30.2}
   - Time: 25
     EnemyPrefab: {fileID: 3618143207256241222, guid: 7242a0a62f3a3d648b104728cc0ade92, type: 3}
     SpawnPosition: {x: -2.87, y: 1.84, z: 38}
   - Time: 25
-    EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
-    SpawnPosition: {x: -15.4, y: -4.38, z: 29}
+    EnemyPrefab: {fileID: 846067821509750963, guid: 49d8e3f53eccc034bb43b51782eaf62c, type: 3}
+    SpawnPosition: {x: -13.6, y: -5.1, z: 29}
   - Time: 30
     EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
-    SpawnPosition: {x: -10.06, y: 0.14, z: 32.7}
+    SpawnPosition: {x: -10.32, y: 0.14, z: 32.7}
   - Time: 30
     EnemyPrefab: {fileID: 4497332636710124165, guid: 60214eba89448104582928397d2664e9, type: 3}
-    SpawnPosition: {x: 7.82, y: -0.12, z: 36}
+    SpawnPosition: {x: 7.79, y: -0.12, z: 36}
   - Time: 30
     EnemyPrefab: {fileID: 4497332636710124165, guid: 60214eba89448104582928397d2664e9, type: 3}
     SpawnPosition: {x: -6.15, y: -0.12, z: 36}
   - Time: 30
     EnemyPrefab: {fileID: 3618143207256241222, guid: 7242a0a62f3a3d648b104728cc0ade92, type: 3}
-    SpawnPosition: {x: 4.13, y: 1.84, z: 38}
-  - Time: 30
-    EnemyPrefab: {fileID: 846067821509750963, guid: 08157815ce326584d8f0856a1faef320, type: 3}
-    SpawnPosition: {x: -15.4, y: -4.38, z: 29}
+    SpawnPosition: {x: 4.14, y: 1.84, z: 38}

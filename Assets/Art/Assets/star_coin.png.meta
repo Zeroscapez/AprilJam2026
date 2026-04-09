@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0b1dc7e6ce0fba428c521b59c239aa4
+guid: 485a5c7d257be584fbd1efbba9aa3f21
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blackstar_beer_0
+      name: star_coin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 459
-        height: 1123
+        width: 206
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,8 +125,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a96bf7e2973724d45af41d4ad48b6803
-      internalID: -196217521
+      spriteID: 44b09a78bfeac5147a41b2ad956e1114
+      internalID: 2045843533
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a92df876a9c18c469cf26fd53680381
+    spriteID: c2abea7e3f18c2f4c8f3429765dfd081
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      blackstar_beer_0: -196217521
+      star_coin_0: 2045843533
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

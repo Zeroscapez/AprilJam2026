@@ -2244,6 +2244,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: CrosshairTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 6ea6854f0cb93d8499c5ab6ec2bd749d, type: 3}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: SpherecastRadius
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -8,7 +9,7 @@ public abstract class EnemyMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float Speed = 2f;
-    public float StopDistance = 1f; // Distance from the player at which the enemy stops moving
+    public float StopDistance = 1f;
     public bool PauseEnabled = false;
     public float PauseDuration = 1f;
     public float PauseInterval = 3f;
@@ -19,23 +20,26 @@ public abstract class EnemyMovement : MonoBehaviour
 
     [Header("Attack")]
     public int AttackDamage = 1;            // Damage dealt to the player on attack
+    public float AttackDuration = 0.5f;        // Duration of the attack animation/state
 
     private float _elapsed;
     private bool _hasAttacked;
     private float _pauseTimer;
     private bool _isPaused;
 
-    private EnemyTarget _target;
-    private Transform playerTransform;
+    public bool _isActing;
+
+    public EnemyTarget _target;
+    public Transform playerTransform;
 
     void Awake()
     {
         playerTransform = Camera.main.transform;
-
+        _target = GetComponent<EnemyTarget>();
     }
     void Start()
     {
-        _target = GetComponent<EnemyTarget>();
+
         if (_target == null)
         {
             Debug.LogError($"[{name}] No EnemyTarget component found! This enemy won't work correctly.");
@@ -47,6 +51,7 @@ public abstract class EnemyMovement : MonoBehaviour
             Debug.LogWarning($"[{name}] EnemyTarget has no EnemyData assigned! Assigning default values to prevent errors.");
             return;
         }
+
         _target.enemyData.LifeTime = LifeTime;
         _target.enemyData.AttackAfter = AttackAfter;
         _target.enemyData.AttackDamage = AttackDamage;
@@ -74,6 +79,10 @@ public abstract class EnemyMovement : MonoBehaviour
 
     void HandlePause()
     {
+
+        if (_isActing) return;
+
+
         if (PauseEnabled)
         {
             _pauseTimer += Time.deltaTime;
@@ -96,14 +105,28 @@ public abstract class EnemyMovement : MonoBehaviour
         }
 
         if (Vector3.Distance(transform.position, playerTransform.position) > StopDistance)
+        {
             Move();
+
+        }
+
     }
 
     void AttackPlayer()
     {
-        PlayerHealth player = FindFirstObjectByType<PlayerHealth>();
-        player?.TakeDamage(AttackDamage);
-        Debug.Log($"[{name}] attacked the player for {AttackDamage} damage.");
+
+        PlayerHealth.Instance?.TakeDamage(AttackDamage);
+        StartCoroutine(AttackSequence());
+
+    }
+
+    IEnumerator AttackSequence()
+    {
+        _isActing = true;
+        _target.SetAttack();
+        yield return new WaitForSeconds(AttackDuration);
+        _target.SetAlive();
+        _isActing = false;
     }
 
     void Despawn()

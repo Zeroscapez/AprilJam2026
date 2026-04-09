@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartTimeline();
+
     }
 
     public void StartTimeline()

@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 6055062851974572730}
   - component: {fileID: 296192278936977988}
   - component: {fileID: 1770170800938376996}
-  - component: {fileID: 4464774777944418107}
-  - component: {fileID: 4835592804368584519}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -135,6 +133,10 @@ MonoBehaviour:
   pointValue: 10
   FlashColor: {r: 1, g: 0, b: 0, a: 1}
   FlashDuration: 0.1
+  DeathDelay: 0.5
+  AliveSprite: {fileID: 0}
+  AttackSprite: {fileID: 0}
+  DeathSprite: {fileID: 0}
 --- !u!114 &1770170800938376996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,33 +157,7 @@ MonoBehaviour:
   LifeTime: 10
   AttackAfter: 2
   AttackDamage: 1
---- !u!114 &4464774777944418107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095508862272968346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteResolver
-  m_CategoryHash: 9.196696e-13
-  m_labelHash: 3.9515362e-28
-  m_SpriteKey: 0
-  m_SpriteHash: 475926083
---- !u!114 &4835592804368584519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6095508862272968346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.2D.Animation.Runtime::UnityEngine.U2D.Animation.SpriteLibrary
-  m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 7790bbe8745dc9448b599022b05386fa, type: 3}
+  AttackDuration: 0.5
+  _isActing: 0
+  _target: {fileID: 0}
+  playerTransform: {fileID: 0}

@@ -126,7 +126,7 @@ MonoBehaviour:
   FireRate: 0.5
   SpherecastRadius: 0.5
   CrosshairSize: 1
-  CrosshairTexture: {fileID: 2800000, guid: 2df49c4ba642b35428e0a00c06104e7c, type: 3}
+  CrosshairTexture: {fileID: 2800000, guid: 8eb768bc4eef9e44f9d6288b7bea0cbb, type: 3}
 --- !u!1 &7826686929012848394
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,6 @@ public abstract class EnemyMovement : MonoBehaviour
     void Start()
     {
 
-
         if (_target == null)
         {
             Debug.LogError($"[{name}] No EnemyTarget component found! This enemy won't work correctly.");
@@ -52,6 +51,7 @@ public abstract class EnemyMovement : MonoBehaviour
             Debug.LogWarning($"[{name}] EnemyTarget has no EnemyData assigned! Assigning default values to prevent errors.");
             return;
         }
+
         _target.enemyData.LifeTime = LifeTime;
         _target.enemyData.AttackAfter = AttackAfter;
         _target.enemyData.AttackDamage = AttackDamage;

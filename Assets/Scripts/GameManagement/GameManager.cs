@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
@@ -19,9 +20,10 @@ public class GameManager : MonoBehaviour
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-
+        StartCoroutine(GameStartSequence());
     }
 
     // Update is called once per frame
@@ -30,6 +32,20 @@ public class GameManager : MonoBehaviour
 
     }
 
+    IEnumerator GameStartSequence()
+    {
+        // You can add any pre-game animations or effects here
+        yield return new WaitForSeconds(5f); // Example delay before starting the game
+
+        StartGame();
+    }
+
+
+    public void StartGame()
+    {
+        UIStageTimer.Instance.StartTimer();
+        EnemySpawner.Instance.StartTimeline();
+    }
     public void Stop()
     {
         if (GAME != GameState.Playing)
@@ -43,6 +59,10 @@ public class GameManager : MonoBehaviour
         ScoreManager.Instance.SubmitScore();
 
     }
+
+
+
+
 }
 public enum GameState
 {

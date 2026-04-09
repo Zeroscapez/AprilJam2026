@@ -38,6 +38,11 @@ public class EnemyTarget : MonoBehaviour, IShootable
         EnemyMovement = GetComponent<EnemyMovement>();
         _renderer = GetComponent<SpriteRenderer>();
 
+        if (_material)
+        {
+            _originalColor = _material.color;
+        }
+
         if (enemyData == null)
         {
             Debug.LogWarning("EnemyData not assigned on " + gameObject.name);
@@ -62,16 +67,6 @@ public class EnemyTarget : MonoBehaviour, IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
-        if (_material)
-        {
-            _originalColor = _material.color;
-        }
-
-
-
-
-
 
         SetAlive();
     }

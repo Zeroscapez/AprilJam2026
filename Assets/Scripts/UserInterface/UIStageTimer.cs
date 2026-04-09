@@ -23,12 +23,6 @@ public class UIStageTimer : MonoBehaviour
         Instance = this;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        IsRunning = true;
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -46,6 +40,12 @@ public class UIStageTimer : MonoBehaviour
 
 
 
+    }
+
+    public void StartTimer()
+    {
+        ElapsedTime = 0f;
+        IsRunning = true;
     }
 
     public void StopTimer()

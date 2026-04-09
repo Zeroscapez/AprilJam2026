@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
     public GameObject startBanner;
     public GameObject readyBanner;
+    public GameObject timeBanner;
 
 
     void Awake()
@@ -21,8 +22,10 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        timeBanner.gameObject.SetActive(false);
         startBanner.gameObject.SetActive(false);
         readyBanner.gameObject.SetActive(true);
+
         Debug.Log("UIManager initialized. Start Banner hidden, Ready Banner shown.");
     }
 
@@ -38,6 +41,11 @@ public class UIManager : MonoBehaviour
         startBanner.gameObject.SetActive(false);
         readyBanner.gameObject.SetActive(false);
         Debug.Log("Banners hidden.");
+    }
+
+    public void ShowTimeBanner()
+    {
+        timeBanner.gameObject.SetActive(true);
     }
 
 

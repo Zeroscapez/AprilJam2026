@@ -59,10 +59,16 @@ public class GameManager : MonoBehaviour
         EnemySpawner.Instance.StartTimeline();
     }
 
+    IEnumerator GameOverSequence()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        UIManager.Instance.ShowTimeBanner();
+    }
+
     public void Stop()
     {
         if (GAME != GameState.Playing) return;
-
+        StartCoroutine(GameOverSequence());
         GAME = GameState.GameOver;
         StopAllCoroutines();
 

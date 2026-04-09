@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Enemy3
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   EnemyName: Enemy3
-  MaxHealth: 5
+  MaxHealth: 3
   LifeTime: 10
   AttackAfter: 6
-  AttackDamage: 3
+  AttackDamage: 2
   AliveSprite: {fileID: -1067232544, guid: dd2a7edccd46c1b499a5b01402a42a19, type: 3}
   AttackSprite: {fileID: 753615372, guid: dd2a7edccd46c1b499a5b01402a42a19, type: 3}
   DeathSprite: {fileID: 331952662, guid: dd2a7edccd46c1b499a5b01402a42a19, type: 3}

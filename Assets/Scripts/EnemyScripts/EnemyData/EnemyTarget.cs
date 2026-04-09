@@ -80,7 +80,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
 
     public void OnHit()
     {
-        Debug.Log("Enemy hit! = " + enemyName + " Health: " + CurrentEnemyHealth + "/" + maxEnemyHealth);
+
         CurrentEnemyHealth--;
 
         if (CurrentEnemyHealth <= 0)

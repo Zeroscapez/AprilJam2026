@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy1
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   EnemyName: Enemy1
-  MaxHealth: 2
+  MaxHealth: 1
   LifeTime: 10
   AttackAfter: 5
   AttackDamage: 1

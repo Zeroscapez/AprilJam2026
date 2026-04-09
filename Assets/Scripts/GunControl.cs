@@ -55,7 +55,7 @@ public class GunControl : MonoBehaviour
 
         Vector2 screenPos = Mouse.current.position.ReadValue();
         Ray ray = mainCamera.ScreenPointToRay(screenPos);
-
+        AudioManager.Instance.PlayAudioClip(AudioManager.Instance.Gunshot);
         Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 0.1f);
 
         if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))

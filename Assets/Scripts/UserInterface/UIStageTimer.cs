@@ -38,6 +38,11 @@ public class UIStageTimer : MonoBehaviour
             TimerText.text = $"{FormatTime(ElapsedTime)}";
         }
 
+        if (ElapsedTime >= 60f)
+        {
+            GameManager.Instance.Stop();
+        }
+
 
 
     }

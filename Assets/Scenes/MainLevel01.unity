@@ -584,7 +584,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 54a75bf0021eaab44aff8b23f012c917, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1496,7 +1496,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a295f843aaea8ac469434992e4dce236, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2244,6 +2244,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: CrosshairTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 6ea6854f0cb93d8499c5ab6ec2bd749d, type: 3}
+    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
+      propertyPath: SpherecastRadius
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2906,7 +2914,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 8
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2045843533, guid: 485a5c7d257be584fbd1efbba9aa3f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3179,7 +3187,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 44abfe67235031540adfa9e7f4763d2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3725,7 +3733,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 082c66264b641e144aa04a424e5016ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

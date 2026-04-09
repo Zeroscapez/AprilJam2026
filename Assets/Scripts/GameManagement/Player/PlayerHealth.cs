@@ -17,10 +17,11 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        CurrentHealth = MaxHealth;
     }
     void Start()
     {
-        CurrentHealth = MaxHealth;
+
     }
 
     public void TakeDamage(int damage)

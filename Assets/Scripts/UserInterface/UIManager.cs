@@ -23,18 +23,21 @@ public class UIManager : MonoBehaviour
     {
         startBanner.gameObject.SetActive(false);
         readyBanner.gameObject.SetActive(true);
+        Debug.Log("UIManager initialized. Start Banner hidden, Ready Banner shown.");
     }
 
     public void ShowBanner()
     {
         startBanner.gameObject.SetActive(true);
         readyBanner.gameObject.SetActive(false);
+        Debug.Log("Start Banner shown, Ready Banner hidden.");
     }
 
     public void HideBanner()
     {
         startBanner.gameObject.SetActive(false);
         readyBanner.gameObject.SetActive(false);
+        Debug.Log("Banners hidden.");
     }
 
 

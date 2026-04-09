@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,58 +17,62 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
-
-        PlayerHealth.Instance.OnPlayerDied += Stop;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    void Start()
+    void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainMenuScene") return;
+
+        // Re-subscribe since PlayerHealth is a new instance each scene load
+        if (PlayerHealth.Instance != null)
+            PlayerHealth.Instance.OnPlayerDied += Stop;
+
+        GAME = GameState.Playing;
+        StopAllCoroutines();
         StartCoroutine(GameStartSequence());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator GameStartSequence()
     {
-        // You can add any pre-game animations or effects here
-        yield return new WaitForSeconds(3f); // Example delay before starting the game
+        yield return new WaitForSecondsRealtime(3f);
         UIManager.Instance.ShowBanner();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1f);
         UIManager.Instance.HideBanner();
         StartGame();
     }
-
 
     public void StartGame()
     {
         UIStageTimer.Instance.StartTimer();
         EnemySpawner.Instance.StartTimeline();
     }
+
     public void Stop()
     {
-        if (GAME != GameState.Playing)
-        {
-            return;
-        }
+        if (GAME != GameState.Playing) return;
 
         GAME = GameState.GameOver;
+        StopAllCoroutines();
 
+        EnemySpawner.Instance.StopTimeline();
         UIStageTimer.Instance.StopTimer();
         ScoreManager.Instance.SubmitScore();
         SceneManager.LoadScene("MainMenuScene");
-
     }
-
-
-
-
 }
+
 public enum GameState
 {
     Playing,

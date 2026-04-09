@@ -8,6 +8,7 @@ public class EnemyManager : MonoBehaviour
 
     public int EnemiesRemaining { get; private set; }
 
+
     public event Action<int> OnEnemyCountChanged;
     public event Action OnAllEnemiesDefeated;
 
@@ -18,14 +19,10 @@ public class EnemyManager : MonoBehaviour
 
     }
 
+
     public void Start()
     {
-        StartCoroutine(GameStartSequence());
-    }
 
-    public void StartGame()
-    {
-        EnemySpawner.Instance.StartTimeline();
     }
 
     /// <summary>
@@ -44,18 +41,11 @@ public class EnemyManager : MonoBehaviour
     {
         EnemiesRemaining = Mathf.Max(0, EnemiesRemaining - 1);
         OnEnemyCountChanged?.Invoke(EnemiesRemaining);
-
+        EnemySpawner.Instance.UpdateEnemyCount();
         if (EnemiesRemaining == 0)
             OnAllEnemiesDefeated?.Invoke();
     }
 
-    IEnumerator GameStartSequence()
-    {
-        // You can add any pre-game animations or effects here
-        yield return new WaitForSeconds(5f); // Example delay before starting the game
-
-        StartGame();
-    }
 
     public void Reset()
     {

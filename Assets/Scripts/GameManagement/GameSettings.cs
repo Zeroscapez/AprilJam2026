@@ -2,20 +2,19 @@ using UnityEngine;
 
 public class GameSettings : MonoBehaviour
 {
+    private static GameSettings _instance;
+
     void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
         DontDestroyOnLoad(gameObject);
         Application.targetFrameRate = 60;
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        QualitySettings.vSyncCount = 0;
     }
 }

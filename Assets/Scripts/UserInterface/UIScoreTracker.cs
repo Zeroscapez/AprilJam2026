@@ -14,14 +14,15 @@ public class UIScoreTracker : MonoBehaviour
             Debug.LogError("UIScoreTracker requires a TextMeshProUGUI component.");
         }
 
-        ScoreManager.Instance.OnScoreChanged += UpdateScoreDisplay;
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ScoreManager.Instance.OnScoreChanged += UpdateScoreDisplay;
         if (scoreText != null)
         {
-            scoreText.text = $"Score: 0";
+            scoreText.text = $"000";
         }
     }
 
@@ -35,8 +36,9 @@ public class UIScoreTracker : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"Score: {newScore}";
+            scoreText.text = $"{newScore:000}";
         }
     }
+
 
 }

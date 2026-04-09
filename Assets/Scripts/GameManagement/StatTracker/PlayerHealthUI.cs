@@ -8,6 +8,8 @@ public class PlayerHealthUI : MonoBehaviour
     public PlayerHealth PlayerHealth;
     public GameObject HeartPrefab; // Heart Prefab with Image component
 
+    public Transform HeartContainer; // Container to hold heart icons
+
     [Header("Sprites")]
     public Sprite FullHeartSprite; //Full Heart
     public Sprite EmptyHeartSprite; //Empty Heart
@@ -50,7 +52,7 @@ public class PlayerHealthUI : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            GameObject obj = Instantiate(HeartPrefab, transform);
+            GameObject obj = Instantiate(HeartPrefab, HeartContainer);
             Image img = obj.GetComponent<Image>();
             img.sprite = FullHeartSprite; // Add this line
             heartImages.Add(img);

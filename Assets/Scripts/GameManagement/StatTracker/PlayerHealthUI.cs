@@ -8,11 +8,18 @@ public class PlayerHealthUI : MonoBehaviour
     public PlayerHealth PlayerHealth;
     public GameObject HeartPrefab; // Heart Prefab with Image component
 
+    public Transform HeartContainer; // Container to hold heart icons
+
     [Header("Sprites")]
     public Sprite FullHeartSprite; //Full Heart
     public Sprite EmptyHeartSprite; //Empty Heart
 
     private List<Image> heartImages = new List<Image>();
+
+    public void Awake()
+    {
+        PlayerHealth = PlayerHealth.Instance;
+    }
 
     void Start()
     {
@@ -45,7 +52,7 @@ public class PlayerHealthUI : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            GameObject obj = Instantiate(HeartPrefab, transform);
+            GameObject obj = Instantiate(HeartPrefab, HeartContainer);
             Image img = obj.GetComponent<Image>();
             img.sprite = FullHeartSprite; // Add this line
             heartImages.Add(img);
@@ -61,7 +68,7 @@ public class PlayerHealthUI : MonoBehaviour
             if (EmptyHeartSprite != null)
             {
                 heartImages[i].sprite = isFull ? FullHeartSprite : EmptyHeartSprite;
-                Debug.Log(isFull ? $"Heart {i + 1}: Full" : $"Heart {i + 1}: Empty");
+
             }
             else
                 heartImages[i].gameObject.SetActive(isFull); // Just hide if no empty sprite

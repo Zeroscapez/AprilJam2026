@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class EnemyManager : MonoBehaviour
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
 
+    }
+
+    public void Start()
+    {
+        StartCoroutine(GameStartSequence());
+    }
+
+    public void StartGame()
+    {
+        EnemySpawner.Instance.StartTimeline();
     }
 
     /// <summary>
@@ -36,6 +47,14 @@ public class EnemyManager : MonoBehaviour
 
         if (EnemiesRemaining == 0)
             OnAllEnemiesDefeated?.Invoke();
+    }
+
+    IEnumerator GameStartSequence()
+    {
+        // You can add any pre-game animations or effects here
+        yield return new WaitForSeconds(5f); // Example delay before starting the game
+
+        StartGame();
     }
 
     public void Reset()

@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 5855102393954147263}
   - component: {fileID: 5621888052342347308}
   - component: {fileID: 2015593053412905744}
+  - component: {fileID: 6953535518905600679}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -642,6 +643,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6953535518905600679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400347828975185503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6df94aa0e838e4695c0aafec1621e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &6442812852134205356
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,6 +743,7 @@ GameObject:
   - component: {fileID: 8597216888919482514}
   - component: {fileID: 6314832576140023145}
   - component: {fileID: 7224722104941340584}
+  - component: {fileID: 4379526020304722932}
   m_Layer: 5
   m_Name: Gameplay UI Canvas
   m_TagString: Untagged
@@ -837,6 +851,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   startBanner: {fileID: 4902648706862317513}
   readyBanner: {fileID: 6442812852134205356}
+--- !u!114 &4379526020304722932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778136235449163467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4beb9cb0312080449848a1642268e131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIStageTimer
+  TimerText: {fileID: 7537838079785695411}
 --- !u!1 &8290148800660121315
 GameObject:
   m_ObjectHideFlags: 0

@@ -104,7 +104,7 @@ public class EnemyTarget : MonoBehaviour, IShootable
             Debug.Log(enemyName + " has been defeated!");
             return;
         }
-
+        EnemyManager.Instance?.UnregisterEnemy();
         SetDeath();
 
         StartCoroutine(DestroyAfterDelay()); // Delay to allow death animation/sprite to show

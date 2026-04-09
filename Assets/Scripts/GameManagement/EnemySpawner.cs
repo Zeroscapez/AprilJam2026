@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,15 +15,15 @@ public class EnemySpawner : MonoBehaviour
     private float _elapsed;
     private bool _running;
 
+    public static Action OnTimelineComplete;
+    public static Action<int> OnEnemyCountUpdated;
+
+    public int totalEnemies { get; private set; }
+
     void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
-    }
-
-    void Start()
-    {
-
     }
 
     public void StartTimeline()
@@ -38,6 +39,14 @@ public class EnemySpawner : MonoBehaviour
 
         _elapsed = 0f;
         _running = true;
+        totalEnemies = _remaining.Count;
+        OnTimelineComplete.Invoke();
+    }
+
+    public void UpdateEnemyCount()
+    {
+        totalEnemies--;
+        OnEnemyCountUpdated?.Invoke(totalEnemies);
     }
 
     public void StopTimeline()
@@ -56,6 +65,11 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemy(_remaining[0]);
             _remaining.RemoveAt(0);
         }
+    }
+
+    public int GetRemainingEnemyCount()
+    {
+        return _remaining.Count;
     }
 
     void SpawnEnemy(SpawnEvent spawnEvent)

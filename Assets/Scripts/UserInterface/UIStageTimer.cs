@@ -35,7 +35,7 @@ public class UIStageTimer : MonoBehaviour
 
         if (TimerText != null)
         {
-            TimerText.text = $"Time: {FormatTime(ElapsedTime)}";
+            TimerText.text = $"{FormatTime(ElapsedTime)}";
         }
 
 

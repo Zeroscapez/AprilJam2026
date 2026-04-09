@@ -57,6 +57,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055062851974572730, guid: 11ffe336eb236874bb614de83b5e4c02, type: 3}
       propertyPath: m_LayerOverridePriority
       value: 7
       objectReference: {fileID: 0}

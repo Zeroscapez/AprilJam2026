@@ -2369,55 +2369,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImportantStageObjects
       objectReference: {fileID: 0}
-    - target: {fileID: 4849063466351732812, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-      propertyPath: CrosshairTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 8eb768bc4eef9e44f9d6288b7bea0cbb, type: 3}
-    - target: {fileID: 8686570184862018688, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-      propertyPath: SpherecastRadius
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 797017310383809786, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1005176953}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
---- !u!1 &1005176951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 797017310383809786, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-  m_PrefabInstance: {fileID: 1005176950}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1005176952 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8093333717999249472, guid: 1ba13004fce483d489111c7e6de3a6fd, type: 3}
-  m_PrefabInstance: {fileID: 1005176950}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005176951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &1005176953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005176951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc09474b26179348818d0558d24f6ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIEnemyCountTracker
-  enemyCountText: {fileID: 1005176952}
 --- !u!1 &1030498375
 GameObject:
   m_ObjectHideFlags: 0

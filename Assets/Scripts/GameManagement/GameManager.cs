@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
@@ -19,8 +18,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        PlayerHealth.Instance.OnPlayerDied += Stop;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -62,7 +59,6 @@ public class GameManager : MonoBehaviour
 
         UIStageTimer.Instance.StopTimer();
         ScoreManager.Instance.SubmitScore();
-        SceneManager.LoadScene("MainMenuScene");
 
     }
 

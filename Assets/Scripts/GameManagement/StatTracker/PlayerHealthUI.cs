@@ -18,7 +18,7 @@ public class PlayerHealthUI : MonoBehaviour
 
     public void Awake()
     {
-        //PlayerHealth = PlayerHealth.Instance;
+        PlayerHealth = PlayerHealth.Instance;
     }
 
     void Start()
@@ -26,7 +26,6 @@ public class PlayerHealthUI : MonoBehaviour
         if (PlayerHealth == null)
         {
             Debug.LogWarning("[PlayerHealthUI] No PlayerHealth assigned.");
-            PlayerHealth = PlayerHealth.Instance;
             return;
         }
 

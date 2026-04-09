@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int points)
     {
         CurrentScore += points;
-
+        Debug.Log($"[ScoreManager] +{points} pts → Total: {CurrentScore}");
         OnScoreChanged?.Invoke(CurrentScore);
     }
 
